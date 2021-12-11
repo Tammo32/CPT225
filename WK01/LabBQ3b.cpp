@@ -14,8 +14,6 @@ int main(void) {
         }
         std::cout << std::endl;
     }
-    
-    // testing changes for git commit
 
     return EXIT_SUCCESS;
 }
