@@ -31,6 +31,8 @@ int main(void) {
    //class constructor(input)
    Card myCard(RED, 7);
 
+   std::cout << myCard.getColourAsString() << " " << myCard.getColourAsInt();
+
    return EXIT_SUCCESS;
 }
 
@@ -46,3 +48,21 @@ int Card::getNumber() {
 int Card::getColourAsInt() {
     return color;
 }
+
+std::string Card::getColourAsString() {
+    switch (color) {
+        case 0:
+            return "RED";
+            break;
+        case 1:
+            return "RED";
+            break;
+        default:
+            return "Unknown color";
+            break;
+    }
+}
+
+// std::string Card::getRule() {
+
+// }
