@@ -29,9 +29,10 @@ int main(void) {
    // TODO: Implement making a card.
    
    //class constructor(input)
-   Card myCard(RED, 7);
+   Card c(RED, 7);
 
-   std::cout << myCard.getColourAsString() << " " << myCard.getColourAsInt();
+   std::cout << c.getColourAsString() << " " << c.getNumber() << std::endl;
+   std::cout << c.getRule();
 
    return EXIT_SUCCESS;
 }
