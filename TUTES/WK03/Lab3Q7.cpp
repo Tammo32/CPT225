@@ -13,7 +13,7 @@ int main (void) {
     readMaze(maze);
     std::cout << maze[0][0] << std::endl;
 
-    printMaze(maze);
+    printMaze(maze); 
 
     return 0;
 }
