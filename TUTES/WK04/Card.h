@@ -1,4 +1,3 @@
-
 #ifndef CARD_H
 #define CARD_H
 
@@ -16,20 +15,21 @@ typedef int Colour;
 
 class Card {
 public:
-   Card();
-   Card(Colour colour, int number);
-   Card(Card& other);
-   ~Card();
+   Card();  // Default constructor
+   Card(Colour colour, int number); // Customised constructor
+   Card(Card& other); // Copy constructor
+   ~Card(); // Deconstructor
 
    Colour getColour();
    int getNumber();
+   void setNumber(int number);
    std::string getRule();
 
    std::string colourAsString();
 
 private:
-   Colour   colour;
-   int      number;
+   Colour*   colour;
+   int*      number;
 };
 
 
