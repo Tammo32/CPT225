@@ -10,11 +10,16 @@ NodeList::~NodeList(){
 }
 
 NodeList::NodeList(NodeList& other){
-    // TODO
+    // TODO - Deep Copy of the NodeList
+    //number = new int(*other.number);
+    //colour = new int(*other.colour);
+    *nodes = new Node(*other.nodes);
+
 }
 
 int NodeList::getLength(){
     // TODO
+    return length;
 }
 
 void NodeList::addElement(Node* newPos){

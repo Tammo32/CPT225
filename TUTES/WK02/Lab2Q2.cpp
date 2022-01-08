@@ -11,7 +11,7 @@ int main (void) {
    char c = 'e';
    
    int* iPtr = NULL;
-   double dPtr = &d;
+   double* dPtr = &d;
    cout << "iPtr = " << iPtr << ", dPtr = " << dPtr << endl;
    
    cout << "*iPtr = " << *iPtr << ", *dPtr = " << *dPtr << endl;
@@ -20,9 +20,9 @@ int main (void) {
    cout << "*iPtr = " << *iPtr << ", *dPtr = " << *dPtr << endl;
 
    cout << "i = " << i << ", d = " << d << ", c = " << c << endl;
-   foo(i, d, c);
+   foo(i, &d, c);
    cout << "i = " << i << ", d = " << d << ", c = " << c << endl;
-   foo(iPtr, dPtr, c);
+   foo(*iPtr, dPtr, c);
    cout << "i = " << i << ", d = " << d << ", c = " << c << endl;
 
    return EXIT_SUCCESS;
@@ -31,5 +31,5 @@ int main (void) {
 void foo(int x, double* y, char& z) {
    x += 1;
    y += 2;
-   ++c;
+   ++z;
 }
