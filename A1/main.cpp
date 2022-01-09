@@ -11,6 +11,7 @@
 // Helper test functions
 void testNode();
 void testNodeList();
+bool getCharacter(char* c);
 
 // Read a environment from standard input.
 void readEnvStdin(Env env);
@@ -25,10 +26,10 @@ int main(int argc, char** argv){
     // AS YOU WORK ON MILESTONE 2. YOU CAN UPDATE THEM YOURSELF
     // AS YOU GO ALONG.
     // COMMENT THESE OUT BEFORE YOU SUBMIT!!!
-    std::cout << "TESTING - COMMENT THE OUT TESTING BEFORE YOU SUBMIT!!!" << std::endl;
-    testNode();
-    testNodeList();
-    std::cout << "DONE TESTING" << std::endl << std::endl;
+    // std::cout << "TESTING - COMMENT THE OUT TESTING BEFORE YOU SUBMIT!!!" << std::endl;
+    // testNode();
+    // testNodeList();
+    // std::cout << "DONE TESTING" << std::endl << std::endl;
 
     // Load Environment 
     Env env;
@@ -56,10 +57,48 @@ int main(int argc, char** argv){
 
 void readEnvStdin(Env env){
     //TODO 
+    int numChars = 0;
+    int totalChars = ENV_DIM*ENV_DIM;
+
+    for(int i = 0; i < ENV_DIM; i++) {
+        for(int j = 0; j < ENV_DIM; j++) {
+            // if(std::cin.good()){
+                // importedChars = getCharacter(&env[i][j]);
+                std::cin >> env[i][j];
+                // Test read by printing
+                // std::cout << i << ", " << j << std::endl;
+                // std::cout << env[i][j] << std::endl;
+                numChars++;
+            // }
+        }
+    }
+    // TODO Implement check that maze format correct
+    // std::cout << numChar << std::endl;
+    // std::cout << totalChars << std::endl;
+    if (totalChars != numChars) {
+        std::cout << "Error with Maze!" << std::endl;
+    }
+}
+
+bool getCharacter(char* c) {
+    std::cin >> *c;
+
+    if (std::cin.eof()) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 void printEnvStdout(Env env, NodeList* solution) {
     //TODO
+    for(int i = 0; i < ENV_DIM; i++) {
+        for(int j = 0; j < ENV_DIM; j++) {
+            std::cout << env[i][j];
+        }
+        std::cout << std::endl;
+    }
 }
 
 void testNode() {
@@ -71,6 +110,7 @@ void testNode() {
     std::cout << node->getCol() << ",";
     std::cout << node->getDistanceTraveled() << std::endl;
     delete node;
+    std::cout << "Test node deleted and back in testNode" << std::endl;
 
     // Change Node and print again
     node = new Node(4, 2, 3);
@@ -105,4 +145,9 @@ void testNodeList() {
 
     // Print out the NodeList
     std::cout << "PRINTING OUT A NODELIST IS AN EXERCISE FOR YOU TO DO" << std::endl;
+    for(int i = 0; i < nodeList->getLength(); i++) {
+        std::cout << nodeList->getNode(i)->getRow() << ", ";
+        std::cout << nodeList->getNode(i)->getCol() << ", ";
+        std::cout << nodeList->getNode(i)->getDistanceTraveled() << std::endl;
+    }
 }

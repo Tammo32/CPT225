@@ -30,8 +30,9 @@ public:
     /* YOU MAY ADD YOUR MODIFICATIONS HERE       */
     /*                                           */
 
-    // test
-    Node();
+
+    // testing node copy constructor
+    Node(Node& other);
 
 private:
     /*                                           */

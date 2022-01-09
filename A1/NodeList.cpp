@@ -3,18 +3,19 @@
 
 NodeList::NodeList(){
     // TODO
-    std::cout << "NodeList default constructor" << std::endl;
+    // std::cout << "NodeList default constructor" << std::endl;
     for(int i = 0; i < NODE_LIST_ARRAY_MAX_SIZE; i++) {
-        std::cout << "Memory allocated to Node #" << i+1 << std::endl;
-        nodes[i] = new Node(nodes[i]->getRow(), nodes[i]->getCol(), nodes[i]->getDistanceTraveled());
+        // std::cout << "Memory allocated to Node #" << i+1 << std::endl;
+        // nodes[i] = new Node(nodes[i]->getRow(), nodes[i]->getCol(), nodes[i]->getDistanceTraveled());
+        nodes[i] = nullptr;
     }
-    numStored = 0;
+    length = 0;
 }
 
 NodeList::~NodeList(){
     // TODO
-    std::cout << "NodeList deconstructor" << std::endl;
-    for(int i = 0; i < NODE_LIST_ARRAY_MAX_SIZE; i++) {
+    // std::cout << "NodeList deconstructor" << std::endl;
+    for(int i = 0; i < length; i++) {
         delete nodes[i];
     }
     delete *nodes;
@@ -41,25 +42,22 @@ int NodeList::getLength(){
 
 void NodeList::addElement(Node* newPos){
     // TODO
-    *nodes[numStored] = *newPos;
-    numStored++;
-
-    if(numStored > NODE_LIST_ARRAY_MAX_SIZE) {
+    if(length > NODE_LIST_ARRAY_MAX_SIZE) {
         std::cout << "NodeList is full";
     }
-
-    //OR?
-    // nodes.push_back(newPos);
-
+    else {
+        nodes[length] = new Node(*newPos);
+        length++;
+    }
 }
 
 Node* NodeList::getNode(int i){
     // TODO
-    Node* retNode = nullptr;
+    Node* returnedNode = nullptr;
 
     if( i >= 0 && i < getLength()) {
-        retNode = nodes[i];
+        returnedNode = nodes[i];
     }
 
-    return retNode;
+    return returnedNode;
 }
