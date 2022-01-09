@@ -92,9 +92,9 @@ bool getCharacter(char* c) {
 }
 
 void printEnvStdout(Env env, NodeList* solution) {
-    //TODO
-    for(int i = 0; i < ENV_DIM; i++) {
-        for(int j = 0; j < ENV_DIM; j++) {
+    //TODO - basic replication print out at this stage
+    for(int i = 0; i < ENV_DIM; ++i) {
+        for(int j = 0; j < ENV_DIM; ++j) {
             std::cout << env[i][j];
         }
         std::cout << std::endl;
