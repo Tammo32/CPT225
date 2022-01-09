@@ -30,6 +30,8 @@ public:
     /* YOU MAY ADD YOUR MODIFICATIONS HERE       */
     /*                                           */
 
+    // test
+    Node();
 
 private:
     /*                                           */
