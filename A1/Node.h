@@ -33,6 +33,7 @@ public:
 
     // testing node copy constructor
     Node(Node& other);
+    bool equals(Node& other);
 
 private:
     /*                                           */
@@ -46,7 +47,7 @@ private:
     /*                                           */
     /* YOU MAY ADD YOUR MODIFICATIONS HERE       */
     /*                                           */
-
+    
 };
 
 #endif //COSC_ASSIGN_ONE_NODE

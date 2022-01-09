@@ -43,7 +43,9 @@ private:
     /*                                           */
     /* YOU MAY ADD YOUR MODIFICATIONS HERE       */
     /*                                           */
-    
+    Node* selectPNode(NodeList* openList, NodeList* closedList, Node* goal);
+    bool alreadyInList(NodeList* nList, Node* testNode);
+    bool withinEnvironment(int row, int col);
 };
 
 

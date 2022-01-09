@@ -32,6 +32,15 @@ NodeList::NodeList(NodeList& other){
     // DEEP COPY
 //    nodes[NODE_LIST_ARRAY_MAX_SIZE] = new Node*(*other.nodes);
 //    length = new int(*other.length);
+    for (int i = 0; i < NODE_LIST_ARRAY_MAX_SIZE ; ++i){
+        nodes[i] = nullptr;
+    }
+
+    length = other.length;
+    for (int i = 0; i < length; ++i)
+    {
+        nodes[i] = new Node(*other.nodes[i]);
+    }
 
 }
 

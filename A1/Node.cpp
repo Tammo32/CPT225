@@ -83,3 +83,7 @@ Node::Node(Node& other) {
 }
     
 //--------------------------------                             
+// true if both rows equal AND both columns equal
+bool Node::equals(Node& other){
+    return (this->row == other.getRow()) && (this->col == other.getCol());
+}
