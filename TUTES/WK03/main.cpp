@@ -9,7 +9,7 @@ int main (void) {
 
     double dbl = 10;
     example->setValue(dbl);
-    std::cout << example->getValue << std::endl;
+    std::cout << example->getValue() << std::endl;
 
     return EXIT_SUCCESS;
 }
