@@ -2,6 +2,10 @@
 	"folders": [
 		{
 			"path": ".."
+		},
+		{
+			"name": "COSC2136-Assignment02",
+			"path": "../../COSC2136-Assignment02"
 		}
 	],
 	"settings": {
