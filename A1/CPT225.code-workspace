@@ -53,7 +53,18 @@
 			"sstream": "cpp",
 			"stdexcept": "cpp",
 			"streambuf": "cpp",
-			"typeinfo": "cpp"
+			"typeinfo": "cpp",
+			"list": "cpp",
+			"map": "cpp",
+			"set": "cpp",
+			"regex": "cpp",
+			"bitset": "cpp",
+			"chrono": "cpp",
+			"condition_variable": "cpp",
+			"cstring": "cpp",
+			"ctime": "cpp",
+			"ratio": "cpp",
+			"shared_mutex": "cpp"
 		}
 	}
 }
