@@ -1,24 +1,74 @@
-#include <functional>
+#include <string.h>
+
 #include <iostream>
 
-using namespace std;
+#define MAX_LENGTH 100
 
-int main()
+class MyString {
+   private:
+    char string[MAX_LENGTH];
+    int length;
 
-{
-    auto f1 = [](int x, int y) { return x + y; };
+   public:
+    MyString(char* s, int l) {
+        length = l;
+        strcpy(string, s);
+    };
 
-    cout << f1(2, 3) << endl;
+    MyString(){};
 
-    // use capture list
+    // Copy constructor
+    MyString(MyString& other) { strcpy(string, other.string); };
 
-    int i = 1;
+    ~MyString(){
+        // delete string;
+    };
 
-    int j = 5;
+    char& operator[](const int index) { return string[index]; }
 
-    auto f2 = [i, &j] { return i + j; };
+    bool operator==(const MyString& other) const {
+        int eq = 0;
+        for (int i = 0; i < length; i++) {
+            if (string[i] == other.string[i]) {
+                eq++;
+            }
+        }
+        if (eq == length) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
 
-    cout << f2() << endl;
+    bool operator<(const MyString& other) const {
+        int x;
+        x = strcmp(string, other.string);
+        if (x < 0) {
+            return true;
+
+        }
+        else {
+            return false;
+        }
+    };
+
+    bool operator>(const MyString& other) const {
+        bool o;
+        o = (*this < other);
+        return o;
+    };
+
+    bool operator!=(const MyString& other) const { return !(*this == other); }
+};
+
+int main() {
+    char* ptr = (char*)"Test";
+
+    MyString s1(ptr, 4);
+    MyString s2(ptr, 4);
+
+    std::cout << (s1 != s2);
 
     return 0;
 }
